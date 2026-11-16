@@ -1,0 +1,39 @@
+[package]
+name = "zeltun"
+version = "2.5.0"
+edition = "2021"
+
+[lib]
+name = "zeltun"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "zeltun-rs"
+path = "src/main.rs"
+
+[dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_NetworkManagement_IpHelper",
+    "Win32_NetworkManagement_Ndis",
+    "Win32_Networking_WinSock",
+    "Win32_System_Threading",
+    "Win32_System_ProcessStatus",
+    "Win32_System_LibraryLoader",
+] }
+tokio = { version = "1", features = [
+    "net",
+    "io-util",
+    "rt-multi-thread",
+    "sync",
+    "time",
+    "macros",
+] }
+socket2 = { version = "0.5", features = ["all"] }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
