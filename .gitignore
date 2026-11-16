@@ -1,0 +1,11 @@
+target/
+*.exe
+*.dll
+!assets/wintun.dll
+*.pdb
+*.lib
+*.exp
+*.log
+*.tmp
+.vscode/
+.idea/
