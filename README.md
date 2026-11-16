@@ -1,3 +1,10 @@
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/zeltun.svg" />
+    <img src="assets/zeltun-light.svg" alt="Zeltun" width="64" height="64" />
+  </picture>
+</p>
+
 # Zeltun
 
 Zero overhead, native speed, split tunneling.
@@ -64,3 +71,4 @@ Quick CLI test:
 
 If this project helped you, you can support it here:
 https://donatr.ee/devlsam/
+
